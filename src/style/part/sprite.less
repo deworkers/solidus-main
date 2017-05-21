@@ -1,0 +1,154 @@
+/*
+LESS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: @icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+@icon-home: x y offset_x offset_y width height total_width total_height image_path name;
+
+At the bottom of this section, we provide information about the spritesheet itself
+@spritesheet: width height image @spritesheet-sprites;
+*/
+@art-name: 'art';
+@art-x: 46px;
+@art-y: 0px;
+@art-offset-x: -46px;
+@art-offset-y: 0px;
+@art-width: 23px;
+@art-height: 20px;
+@art-total-width: 81px;
+@art-total-height: 58px;
+@art-image: '../img/sprite.png';
+@art: 46px 0px -46px 0px 23px 20px 81px 58px '../img/sprite.png' 'art';
+@fb-name: 'fb';
+@fb-x: 69px;
+@fb-y: 0px;
+@fb-offset-x: -69px;
+@fb-offset-y: 0px;
+@fb-width: 12px;
+@fb-height: 20px;
+@fb-total-width: 81px;
+@fb-total-height: 58px;
+@fb-image: '../img/sprite.png';
+@fb: 69px 0px -69px 0px 12px 20px 81px 58px '../img/sprite.png' 'fb';
+@slider-next-name: 'slider-next';
+@slider-next-x: 0px;
+@slider-next-y: 0px;
+@slider-next-offset-x: 0px;
+@slider-next-offset-y: 0px;
+@slider-next-width: 23px;
+@slider-next-height: 42px;
+@slider-next-total-width: 81px;
+@slider-next-total-height: 58px;
+@slider-next-image: '../img/sprite.png';
+@slider-next: 0px 0px 0px 0px 23px 42px 81px 58px '../img/sprite.png' 'slider-next';
+@slider-prev-name: 'slider-prev';
+@slider-prev-x: 23px;
+@slider-prev-y: 0px;
+@slider-prev-offset-x: -23px;
+@slider-prev-offset-y: 0px;
+@slider-prev-width: 23px;
+@slider-prev-height: 42px;
+@slider-prev-total-width: 81px;
+@slider-prev-total-height: 58px;
+@slider-prev-image: '../img/sprite.png';
+@slider-prev: 23px 0px -23px 0px 23px 42px 81px 58px '../img/sprite.png' 'slider-prev';
+@sm-name: 'sm';
+@sm-x: 0px;
+@sm-y: 42px;
+@sm-offset-x: 0px;
+@sm-offset-y: -42px;
+@sm-width: 16px;
+@sm-height: 16px;
+@sm-total-width: 81px;
+@sm-total-height: 58px;
+@sm-image: '../img/sprite.png';
+@sm: 0px 42px 0px -42px 16px 16px 81px 58px '../img/sprite.png' 'sm';
+@twit-name: 'twit';
+@twit-x: 46px;
+@twit-y: 20px;
+@twit-offset-x: -46px;
+@twit-offset-y: -20px;
+@twit-width: 20px;
+@twit-height: 16px;
+@twit-total-width: 81px;
+@twit-total-height: 58px;
+@twit-image: '../img/sprite.png';
+@twit: 46px 20px -46px -20px 20px 16px 81px 58px '../img/sprite.png' 'twit';
+@spritesheet-width: 81px;
+@spritesheet-height: 58px;
+@spritesheet-image: '../img/sprite.png';
+@spritesheet-sprites: @art @fb @slider-next @slider-prev @sm @twit;
+@spritesheet: 81px 58px '../img/sprite.png' @spritesheet-sprites;
+
+/*
+The provided classes are intended to be used with the array-like variables
+
+.icon-home {
+  .sprite-width(@icon-home);
+}
+.icon-email {
+  .sprite(@icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.sprite-width(@sprite) {
+  width: extract(@sprite, 5);
+}
+
+.sprite-height(@sprite) {
+  height: extract(@sprite, 6);
+}
+
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 3);
+  @sprite-offset-y: extract(@sprite, 4);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+
+.sprite-image(@sprite) {
+  @sprite-image: extract(@sprite, 9);
+  @sprite-image-bare: ~`"@{sprite-image}".slice(1, -1)`;
+  background-image: url(@sprite-image-bare);
+}
+
+.sprite(@sprite) {
+  .sprite-image(@sprite);
+  .sprite-position(@sprite);
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+
+/*
+The `.sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of LESS
+
+This must be run when you have at least 2 sprites.
+  If run with a single sprite, then there will be reference errors.
+
+.sprites(@spritesheet-sprites);
+*/
+.sprites(@sprites, @i: 1) when (@i <= length(@sprites)) {
+  @sprite: extract(@sprites, @i);
+  @sprite-name: e(extract(@sprite, 10));
+  .@{sprite-name} {
+    .sprite(@sprite);
+  }
+  .sprites(@sprites, @i + 1);
+}
