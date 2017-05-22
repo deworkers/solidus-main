@@ -20,7 +20,9 @@ body {
 
 .order {
 	padding: 60px 0 80px 0;
-	background: url(../../img/order-bg.jpg) repeat-all;
+	background-image: url(http://psdmania.ru/uploads/posts/2014-03/1395510608_485384-1920x1080.jpg);
+	background-position: 50%;
+	background-attachment: fixed;
 }
 
 .order__inn {
@@ -91,6 +93,7 @@ body {
 .about {
 	background-image: url(/img/about-bg.jpg);
 	background-size: cover;
+	background-attachment: fixed;
 }
 
 .about__dark {
@@ -210,7 +213,11 @@ body {
 }
 
 .teaser {
-	padding: 100px 0	;	
+	padding: 100px 0;	
+	background-image: url(http://psdmania.ru/uploads/posts/2014-03/1395510608_485384-1920x1080.jpg);
+	background-position: 50%;
+	background-attachment: fixed;
+	opacity: 0.7;
 }
 
 .teaser-title {
@@ -267,4 +274,102 @@ body {
 	display: inline-block;
 	margin: 0 10px;
 	.sprite(@twit)
+}
+
+.portfolio {     
+	padding: 50px 0;     
+	background-attachment: fixed;
+	background-image: url(/tmp/bg.jpeg); 
+}
+
+.portfolio-one {
+	width: 33.33%;
+	height: 360px;
+	background: #ddd;
+	background-size: cover;
+	background-position: 50%;
+	transition: all 0.5s;
+
+	&:hover {
+		.portfolio-one-descr {
+			opacity: 1;
+			transition: all 0.3s;
+		}
+	}
+}
+
+
+.portfolio-one-descr {
+	position: absolute;
+	background: rgba(0,0,0,0.6);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	padding: 150px 40px;
+	opacity: 0;
+}
+
+.portfolio-one-descr__title {
+	font-size: 24px;
+	opacity: 0.7;
+	font-weight: 300;
+	margin-bottom: 10px;
+}
+
+.portfolio-one-descr__type {
+	font-size: 18px;
+	opacity: 0.7;
+	font-weight: 300;
+	margin-bottom: 10px;
+}
+
+.portfolio-one-content {
+	
+}
+
+.portfolio-one-content__image {
+	display: inline-block;
+	margin-right: 10px;
+	&:before {
+		content: "";
+		display: inline-block;
+		vertical-align: middle;
+		margin: 5px;
+		.sprite(@gallery);
+	}
+}
+
+.portfolio-one-content__video {
+	display: inline-block;
+	margin-right: 10px;
+	&:before {
+		content: "";
+		display: inline-block;
+		vertical-align: middle;
+		margin: 5px;
+		.sprite(@video);
+	}
+}
+
+
+.portfolio-sm {
+	width: 16.66%;
+	background: #bbb;
+	height: 180px;
+	background-size: cover;
+	
+	.portfolio-one-descr {
+		padding: 50px 20px;	
+	}
+
+	.portfolio-one-descr__title {
+		font-size: 20px;
+	}
+
+	.portfolio-one-descr__type {
+		font-size: 16px;
+	}
+
 }

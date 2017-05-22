@@ -136,4 +136,11 @@ $(document).ready(function() {
         dotsContainer: '.slider-dot-inn'
     })
 
+    $('.portfolio-inn').masonry({
+      // options
+      itemSelector: '.portfolio-one',
+      percentPosition: true,
+      columnWidth: '.portfolio-sm',
+    });
+
 });

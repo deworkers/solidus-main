@@ -7,6 +7,7 @@
 
 //= ../plugin/owl.carousel/owl.carousel.min.js
 //= ../plugin/jquery.validate.min.js
+//= ../plugin/masonry.pkgd.min.js
 
 /*
  * Custom
