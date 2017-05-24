@@ -373,3 +373,81 @@ body {
 	}
 
 }
+
+
+
+.project-modal {
+	background: #000;
+	overflow: hidden;
+}
+
+.modal__close {
+	font-size: 50px;
+	color: #fff;
+	position: fixed;
+	top: -10px;
+	right: -10px;
+	z-index: 10;
+	transform: rotate(45deg);
+	padding: 20px;
+	cursor: pointer;
+}
+
+.project-modal-left {
+	width: 70%;
+	min-height: 100vh;
+	padding: 0 40px;
+	img {
+		width: 100%;
+	}
+}
+
+.project-modal-right {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 30%;
+	min-height: 100vh;
+	padding: 40px;
+	background: #222;
+
+	.portfolio-one-descr__title {
+		margin-bottom: 20px;
+	}
+
+	.portfolio-one-descr__type {
+		margin-bottom: 20px;
+	}
+}
+
+
+.project-modal__descr {
+	font-size: 14px;
+	opacity: 0.7;
+	margin-bottom: 30px;
+}
+
+
+.more-project {
+}
+
+.more-project__title {
+	font-size: 18px;
+	font-weight: 700;
+	margin-bottom: 10px;
+	opacity: 0.7;
+}
+
+.more-project-one {
+	width: 100px;
+	height: 100px;
+	background-size: cover;
+	display: inline-block;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	border: 1px solid transparent;
+
+	&:hover {
+		border-color: #fff;
+	}
+}
