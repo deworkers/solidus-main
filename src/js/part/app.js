@@ -73,39 +73,9 @@ $(document).ready(function() {
         $(this).parents('.select').find('.select-list').slideUp(200);
     });
 
-    /*календарь*/
-    $( ".date input" ).datepicker( $.datepicker.regional[ "ru" ] );
 
-    $.datepicker.regional['ru'] = {
-        closeText: 'Закрыть',
-        prevText: '&#x3c;Пред',
-        nextText: 'След&#x3e;',
-        currentText: 'Сегодня',
-        monthNames: ['Январь','Февраль','Март','Апрель','Май','Июнь',
-        'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
-        monthNamesShort: ['Янв','Фев','Мар','Апр','Май','Июн',
-        'Июл','Авг','Сен','Окт','Ноя','Дек'],
-        dayNames: ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
-        dayNamesShort: ['вск','пнд','втр','срд','чтв','птн','сбт'],
-        dayNamesMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],
-        weekHeader: 'Нед',
-        dateFormat: 'dd.mm.yy',
-        firstDay: 1,
-        isRTL: false,
-        showMonthAfterYear: false,
-        yearSuffix: ''
-    };
-    $.datepicker.setDefaults($.datepicker.regional['ru']);
 
-    
-    var preloadImages = function () {
-        for(var i = 0; i<arguments.length; i++)
-        $("<img />").attr("src", arguments[i]);
-    }
-
-    preloadImages("");
-
-    $("#order-form").validate({
+    $("#order").validate({
        rules:{
             name:{
                 required: true
@@ -140,7 +110,11 @@ $(document).ready(function() {
       // options
       itemSelector: '.portfolio-one',
       percentPosition: true,
-      columnWidth: '.portfolio-sm',
+      columnWidth: '.sm',
+    });
+
+    $('.portfolio-one-descr').magnificPopup({
+        type: 'ajax'
     });
 
 });
