@@ -116,16 +116,14 @@ $(document).ready(function() {
     var magnificPopup = $.magnificPopup.instance; 
 
 
-    $('.portfolio-one-descr').magnificPopup({
+    $('.portfolio-one-descr, .slider-more').magnificPopup({
         type: 'ajax'
     });
 
-    $('.more-project-one').on('.click', function(event) {
-        event.preventDefault;
-        return false;
-            $(this).magnificPopup({
-                type: 'ajax'
-            });
+
+    $('.more-project-one').magnificPopup({
+        type: 'ajax'
     });
+        
 
 });
