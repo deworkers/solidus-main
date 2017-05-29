@@ -113,8 +113,19 @@ $(document).ready(function() {
       columnWidth: '.sm',
     });
 
+    var magnificPopup = $.magnificPopup.instance; 
+
+
     $('.portfolio-one-descr').magnificPopup({
         type: 'ajax'
+    });
+
+    $('.more-project-one').on('.click', function(event) {
+        event.preventDefault;
+        return false;
+            $(this).magnificPopup({
+                type: 'ajax'
+            });
     });
 
 });
