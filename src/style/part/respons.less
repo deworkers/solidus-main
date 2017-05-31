@@ -1,16 +1,194 @@
 
-@media screen and (min-width: 1280px) {
+@media screen and (max-width: 1360px) {
+	.portfolio-one {
+		height: 240px;
+	}
+
+	.portfolio-one-descr {
+		padding: 80px 40px;
+	}
+
+	.portfolio-sm {
+		height: 120px;
+
+		.portfolio-one-descr {
+			padding: 20px;
+		}
+	}
 
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (max-width: 1024px) {
+	.portfolio-one-descr__title {
+		font-size: 20px;	
+	}
+
+	.portfolio-one-descr__type {
+		font-size: 16px;
+	}
+
+	.portfolio-sm {
+
+		.portfolio-one-descr__title {
+			font-size: 18px;
+			margin-bottom: 5px;	
+		}
+
+		.portfolio-one-descr__type {
+			font-size: 14px;
+			margin-bottom: 5px;
+		}
+
+		.portfolio-one-content {
+			margin-bottom: 5px;
+		}
+
+		.portfolio-one-content__image {
+			font-size: 12px;
+
+			&:before {
+				transform: scale(0.7);
+			}
+		}
+
+		.portfolio-one-content__video {
+			font-size: 12px;
+
+			&:before {
+				transform: scale(0.7);
+			}
+		}
+	}
 
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
+	.portfolio-one {
+		width: 50%;
+		height: 200px;
+	}
+
+	.portfolio-sm {
+		width: 50%;
+		height: 200px;
+
+		.portfolio-one-descr {
+			padding: 60px 30px;
+		}
+	}
+
+	.portfolio-one-descr {
+		padding: 60px 30px;
+	}
+
+	.head-logo {
+		left: 10px;
+		width: 90px;
+		top: 15px;
+	}
+	
+	.social-icon {
+		right: 10px;
+
+		a {
+			transform: scale(0.7);
+		}
+	}
+
+	.head-menu a {
+		font-size: 14px;
+	}
+
+
+	.main-slider {
+		height: 450px;
+
+		.owl-nav {
+			top: 225px
+		}
+		.owl-dot {
+			height: 10px;
+			width: 10px;
+		}
+	}
+
+	.main-slider-one {
+		height: 450px;
+	}
+
+	.about__dark {
+		padding: 30px 20px;
+	}
+
+	h2 {
+		margin-bottom: 30px;
+	}
+
+	.portfolio {
+		padding: 30px 0;
+	}
+
+	.music {
+		padding: 30px 0;
+	}
+
+	.teaser-title {
+		font-size: 18px;
+	}
+
+	.order {
+		padding: 30px 20px;
+	}
 
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (max-width: 480px) {
+	.teaser-title {
+		font-size: 15px;
+	}
 
+	.main-slider-one,
+	.main-slider {
+		height: 300px;
+		.owl-nav {
+			top: 140px
+		}
+		.owl-dot {
+			display: none;
+		}
+
+		.owl-next {
+			right: 10px;
+			transform: scale(0.5);
+		}
+
+		.owl-prev {
+			left: 10px;
+			transform: scale(0.5);
+		}
+	}
+
+
+
+	.head-menu {
+		display: none;
+	}
+
+	.portfolio-one {
+		width: 100%;
+		height: 200px;
+	}
+
+	.portfolio-sm {
+		width: 100%;
+		height: 200px;
+
+		.portfolio-one-descr {
+			padding: 60px 30px;
+		}
+	}
+
+	.portfolio-one-descr {
+		padding: 60px 30px;
+	}
 }
