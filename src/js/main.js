@@ -7,6 +7,7 @@
 //= ../plugin/owl.carousel/owl.carousel.min.js
 //= ../plugin/jquery.validate.min.js
 //= ../plugin/masonry.pkgd.min.js
+//= ../plugin/isotope.pkgd.min.js
 //= ../plugin/magnific-popup/jquery.magnific-popup.min.js
 /*
  * Custom
