@@ -104,12 +104,12 @@
 @media screen and (max-width: 768px) {
 	.portfolio-one {
 		width: 50%;
-		height: 200px;
+		height: 300px;
 	}
 
 	.portfolio-sm {
 		width: 50%;
-		height: 200px;
+		height: 300px;
 
 		.portfolio-one-descr {
 			padding: 60px 30px;
@@ -135,6 +135,8 @@
 
 	.portfolio-one-descr {
 		padding: 60px 30px;
+		opacity: 1;
+		background: none;
 	}
 
 	.head-logo {
@@ -160,12 +162,24 @@
 		height: 450px;
 
 		.owl-nav {
-			top: 225px
+			top: 0px;
 		}
 		.owl-dot {
 			height: 10px;
 			width: 10px;
 		}
+
+		.owl-prev {
+			height: 450px;
+
+		}
+
+		.owl-next {
+			height: 450px;
+
+		}
+
+
 	}
 
 	.main-slider-one {
@@ -227,20 +241,21 @@
 	.main-slider-one,
 	.main-slider {
 		height: 300px;
-		.owl-nav {
-			top: 140px
-		}
+		
 		.owl-dot {
 			display: none;
 		}
 
 		.owl-next {
-			right: 10px;
+
+			height: 300px;
+			right: 0px;
 			transform: scale(0.5);
 		}
 
 		.owl-prev {
-			left: 10px;
+			height: 300px;
+			left: 0px;
 			transform: scale(0.5);
 		}
 	}

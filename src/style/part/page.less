@@ -112,7 +112,7 @@ body {
 
 
 .main-slider {
-	height: 800px;
+	height: 100vh;
 	width: 100%;
 
 	.owl-controls {
@@ -124,21 +124,41 @@ body {
 
 	.owl-nav {
 		margin: 0 auto;
-		top: 400px;
+		top: 0px;
 	}
 
 	.owl-prev {
-		.sprite(@slider-prev);
 		display: block;
 		position: absolute;
-		left: 40px;
+		left: 0px;
+		width: 100px;
+		height: 100vh;
+		&:after {
+			content: "";
+			.sprite(@slider-prev);
+			display: block;
+			top: 50%;
+			left: 40px;
+			margin-top: -21px;
+			position: absolute;
+		}
 	}
 
 	.owl-next {
 		display: block;
 		position: absolute;
-		right: 40px;
-		.sprite(@slider-next);
+		right: 0px;
+		width: 100px;
+		height: 100vh;
+		&:after {
+			content: "";
+			.sprite(@slider-next);
+			display: block;
+			top: 50%;
+			right: 40px;
+			margin-top: -21px;
+			position: absolute;
+		}
 	}
 
 	.owl-dots {
@@ -183,9 +203,9 @@ body {
 
 .main-slider-one {
 	width: 100%;
-	height: 800px;
+	height: 100vh;
 	background-size: cover;
-	background-position: center;
+	background-position: 50% 0;
 	display: block;
 
 	.slide-wrap {
@@ -240,6 +260,7 @@ body {
 	position: absolute;
 	top: 10px;
 	left: 40px;
+	z-index: 10;
 }
 
 .head-menu {
@@ -321,6 +342,8 @@ body {
 	opacity: 0.7;
 	font-weight: 300;
 	margin-bottom: 10px;
+
+	display: none;
 }
 
 .portfolio-one-descr__type {
@@ -331,7 +354,9 @@ body {
 }
 
 .portfolio-one-content {
-	
+	position: absolute;
+    bottom: 20px;
+    left: 20px;
 }
 
 .portfolio-one-content__image {
@@ -418,7 +443,7 @@ body {
 	width: 20%;
 	height: 100%;
 	min-height: 100vh;
-	padding: 40px;
+	padding: 30px;
 	background: #222;
 
 	.portfolio-one-descr__title {
@@ -449,8 +474,8 @@ body {
 }
 
 .more-project-one {
-	width: 100px;
-	height: 100px;
+	width: 90px;
+	height: 90px;
 	background-size: cover;
 	display: inline-block;
 	margin-bottom: 10px;
@@ -478,4 +503,13 @@ body {
 	position: fixed;
 	top: 0;
 	overflow: scroll;
+}
+
+.lazy {
+	background: url(/img/loader.svg) no-repeat 50% 50%;
+	width: 100%;
+	margin: 0 auto;
+	display: block;
+	min-height: 100px;
+	border: none;
 }

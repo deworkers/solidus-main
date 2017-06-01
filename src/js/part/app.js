@@ -102,6 +102,10 @@ $(document).ready(function() {
         margin:0,
         nav:true,
         items:1,
+        mouseDrag: false,
+        autoplay: true,
+        lazyLoad: true,
+        autoplayTimeout: 4000,
         navText: ['',''],
         dotsContainer: '.slider-dot-inn'
     })
@@ -117,7 +121,7 @@ $(document).ready(function() {
 
 
     $('.portfolio-one-descr, .slider-more').magnificPopup({
-        type: 'ajax'
+        type: 'ajax',
     });
 
 
@@ -125,6 +129,8 @@ $(document).ready(function() {
         type: 'ajax'
     });
         
+    
+    
     
 
 
