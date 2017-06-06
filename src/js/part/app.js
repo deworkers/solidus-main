@@ -95,9 +95,11 @@ $(document).ready(function() {
                 email: "Wrong email adres",
             }
        }
-    });  
+    }); 
 
-    $('.main-slider-inn').owlCarousel({
+    var owl = $('.main-slider-inn'); 
+
+    owl.owlCarousel({
         loop:true,
         margin:0,
         nav:true,
@@ -109,6 +111,25 @@ $(document).ready(function() {
         navText: ['',''],
         dotsContainer: '.slider-dot-inn'
     })
+
+    var stop = function() {
+        owl.trigger('stop.owl.autoplay');
+    }
+
+    var interval;
+
+    $('.owl-prev, .owl-next').click(function() {
+        interval = setInterval(function(){
+            stop();
+        },100)
+    });
+
+    $(window).scroll(function() {
+        if ( $(window).scrollTop() > $(window).height() ) {
+            owl.trigger('play.owl.autoplay');
+            clearInterval(interval);
+        }
+    });
 
     $('.portfolio-inn').masonry({
       // options
